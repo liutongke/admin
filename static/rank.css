@@ -1,0 +1,19 @@
+/*右侧排行榜*/
+	/*右侧排名*/
+	.rank{
+		position: absolute;
+		left: 70%;
+		top: 0%;
+		border: 1px solid #CCCCCC;
+		border-radius: 5px;
+		width: 25%;
+	}
+
+	.rank_content{
+		margin: 0 auto;
+		width: 85%;
+	}
+	.hot-ul{
+		line-height: 25px;
+		list-style: none;
+	}

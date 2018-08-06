@@ -1,0 +1,85 @@
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.border{
+		position: relative;
+		width: 85%;
+		margin-left: 90px;
+		margin-top: 10px;
+	}
+
+	.head{
+		position: absolute;
+	    left: -90px;
+	    height: 25%;
+	    width: 13%;
+	}
+	/*增加评论的背景图片*/
+	.comment_total{
+		background: url(http://img.yoyo666.top/front/images/icon_comment.gif) no-repeat;
+	}
+	/*增加阅读的背景图片*/
+	.acitve_view{
+		background: url(http://img.yoyo666.top/front/images/icon_arrow.gif) no-repeat;
+	}
+	.right{
+		    color: #555;
+	}
+
+	.left{
+	    color: #555;
+	}
+
+	/*底部详细信息增加padding使样式好看*/
+	.tab-info{
+		padding: 5px;
+	}
+
+	.tab-info a{
+		margin-left: 3%;
+		color: #555;
+	}
+
+	.tab-info a:hover{
+		color: blue;
+	}
+	.border p{
+		margin-top: 15px;
+		padding: 10px;
+	}
+
+	/*最外部div*/
+	.center{
+		border: 1px solid #CCCCCC;
+	    width: 60%;
+	    margin: 0 5%;
+	    border-radius: 10px;
+	}
+
+	.body-all{
+		position: relative;
+	}
+
+	/*翻页*/
+	.page{
+	    width: 60%;
+	    margin: 0 5%;
+	    border-radius: 10px;
+	}
+
+	.hr-bottom{
+		border: 1px solid #CCCCCC;
+	}
+
+	/*页头居中*/
+	.page-header{
+		background: #169FE6;
+		height: 100px;
+		margin-top: -20px;
+		padding-top: 10px;
+		text-align: center;
+	}
+
+	

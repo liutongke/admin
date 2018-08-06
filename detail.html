@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>刘同科的博客</title>
+        <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="./static/detail.css">
+        <link rel="icon" href="./images/60x60 copy.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="./images/60x60 copy.png" type="image/x-icon" />
+    <!-- 底部栏公共css -->
+    <link rel="stylesheet" type="text/css" href="./static/public.css">
+    <!-- 右侧排行榜 -->
+    <link rel="stylesheet" type="text/css" href="./static/rank.css">        
+    </head>
+    
+    <body>
+        <!-- 头部导航栏 -->
+        <div>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+
+                        </button> <a class="navbar-brand" href="#">刘同科的博客</a>
+
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="../index/index.html">首页<span class="sr-only">(current)</span></a>
+
+                            </li>
+                            <li><a href="../index/index.html">博客</a>
+
+                            </li>
+                            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a>
+
+                                    </li>
+                                    <li><a href="#">Another action</a>
+
+                                    </li>
+                                    <li><a href="#">Something else here</a>
+
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a>
+
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">One more separated link</a>
+
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-left">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="搜索博客">
+                            </div>
+                            <button type="submit" class="btn btn-default">搜索</button>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../login-register/login-register.html">登录/注册</a>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+        <div class="body-all">
+            <div class="center">
+                 <h2>django-ckeditor后台富文本编辑器</h2>
+
+                <div class="span-explain"> <span>发布时间：2018年2月5日 19:26作者：刘同科</span>
+ <span>分类标签： Django 阅读(4790) 评论(5)</span>
+
+                </div>
+                <hr class="hr-bottom">
+                <p class="p-content">之前写过Django富文本编辑器的文章，使用UEditor改造前端页面的富文本编辑器。用起来感觉一般，而且好像百度已经很久没有维护了。近期在录制Django2.0视频教程，需要一款更好的富文本编辑器作为教程内容讲解。需要使用方便、配置简单、可上传图片、可查看和编辑html源码的富文本编辑器。最后找到django-ckeditor。 django-ckeditor是集成ckeditor富文本编辑器的django第三方库。可在admin后台使用ckeditor富文本编辑器编辑内容，另页面更加丰富。同时该富文本编辑器也可用于form类。具体说明可见pypi。接下来具体讲解如何使用。
+                    本文使用到的相关版本： Python 3.6 Django 2.0 django-ckeditor 5.4.0 Pillow 5.0.0 1、初步使用django-ckeditor 1）安装django-ckeditor 使用pip安装，目前我安装的版本是5.4.0： pip install django-ckeditor 2）注册ckeditor应用 打开django项目的settings.py文件，在INSTALLED_APPS中加入'ckeditor'，如： INSTALLED_APPS =
+                    [ # ... 'ckeditor', ] 3）修改模型 打开对应需要修改为富文本编辑的模型文件models.py。例如我有个Blog模型： from django.db import models class Blog(models.Model): title = models.CharField(max_length=50) content = models.TextField() 其中，title是博客标题，content是博客内容。博客内容需要富文本编辑，则改成如下： from django.db
+                    import models from ckeditor.fields import RichTextField class Blog(models.Model): title = models.CharField(max_length=50) content = RichTextField() 修改完成之后，同步数据库，再打开admin后台管理界面即可看到效果：</p>
+                <div class="share_btns">
+                    <p>(原创博文，转载请注明来自 <a href="http://yshblog.com/">刘同科的博客</a>！本文链接：<a href="#">http://121.196.192.76/my-blog/detail/detail.html</a>)</p>
+                    <p>若对你有帮助，不妨扫一扫右侧的<a href="/blog/sponsor" target="_blank">二维码</a>打赏支持我 ^_^</p>
+                    <div class="jiathis_style" style="margin-left: 2em;"> <span class="jiathis_txt">分享到：</span>
+
+                        <a class="jiathis_button_tsina"></a>
+                        <a class="jiathis_button_tqq"></a>
+                        <a class="jiathis_button_weixin"></a>
+                        <a class="jiathis_button_cqq"></a>
+                        <a class="jiathis_button_qzone"></a>
+                        <a class="jiathis_button_douban"></a>
+                        <a class="jiathis_button_fb"></a> <span class="clearfix"></span>
+
+                    </div>
+                </div>
+                <p class="page-turn"> <a href="/blog/194">上一篇：Django使用MySQL数据库</a>
+
+                </p>
+                <p class="page-turn"> <a href="/blog/194">上一篇：Django使用MySQL数据库</a>
+
+                </p>
+            </div>
+            <!-- 分页 -->
+            <div class="page">
+                <nav aria-label="...">
+                    <ul class="pager">
+                        <li class="previous"><a href="#"><span aria-hidden="true">←</span>上一页</a>
+
+                        </li>共<span>193</span>篇博文。当前第<span>1</span>页，共<span>20</span>页
+                        <li class="next"><a href="#">下一页<span aria-hidden="true">→</span></a>
+
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--左侧热门排序-->
+            <div class="rank">
+                <div class="rank_content">
+                        <h3>热门推荐</h3>
+
+                    <hr>
+                    <ul class="hot-ul">
+                        <li><a href="">我的小鱼你醒了，还认识早晨吗？昨夜你曾经说，愿夜幕永不开启。你的香腮</a>
+
+                        </li>
+                        <li><a href="">我的小鱼你醒了，还认识早晨吗？昨夜你曾经说，愿夜幕永不开启。你的香腮</a>
+
+                        </li>
+                        <li><a href="">我的小鱼你醒了，还认识早晨吗？昨夜你曾经说，愿夜幕永不开启。你的香腮</a>
+
+                        </li>
+                        <li><a href="">我的小鱼你醒了，还认识早晨吗？昨夜你曾经说，愿夜幕永不开启。你的香腮</a>
+
+                        </li>
+                        <li><a href="">我的小鱼你醒了，还认识早晨吗？昨夜你曾经说，愿夜幕永不开启。你的香腮</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 侧边栏 -->
+        <div class="side">
+            <p class="side-span">公</p>
+            <p class="side-span">告</p>
+            <div class="side-hide">
+                <div class="side-notice">
+                    最新公告
+                </div>
+                <hr>
+                <div class="side-notice-content">
+                    我的小鱼你醒了，还认识早晨吗？昨夜你曾经说，愿夜幕永不开启。你的香腮边轻轻滑落的，是你的泪，还是我的泪？初吻吻
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container-center">
+                <div class="col-sm-4 hidden-xs">
+                    <div class="content">
+                         <h4 class="title">关于本站</h4>
+
+                        <p>1、基于Django+Bootstrap开发</p>
+                        <p>2、主要发表本人的技术原创博客</p>
+                        <p>3、本站于 2018-8-04 开始建站</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="content">
+                         <h4 class="title">建议反馈</h4>
+
+                        <p>1、可在相应的博文底下评论</p>
+                        <p>2、发邮件到1747371936@qq.com</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 hidden-xs">
+                    <div class="content">
+                         <h4 class="title">友情链接</h4>
+
+                        <p><a href="#" title="QQ群：701914136（点击加群）" target="_blank">友情链接</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer"> <span>Welcome to visit my website © </span>
+
+        </div>
+    </body>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./static/public.js"></script>
+</html>

@@ -1,0 +1,78 @@
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+
+	/*最外部div*/
+	.center{
+		position: relative;
+		/*border: 1px solid #CCCCCC;*/
+		width: 90%;
+		/*height: 700px;*/
+		margin: 0 5%;
+		border-radius: 10px;
+		text-align: center;
+		/*overflow: hidden;*/
+	}
+
+	/*我的信息*/
+    .my-data{
+    	float: left;
+    	position: absolute;
+    	top: 0%;
+    	left: 0%;
+		width: 40%;
+		height: 200px;
+		border: 1px solid #CCCCCC;
+		border-radius: 10px;
+    }
+    /*我的足迹*/
+    .my-footprint{
+    	float: right;
+    	position: absolute;
+    	top: 0%;
+    	right: 0%;
+		width: 55%;
+		height: 200px;
+		border: 1px solid #CCCCCC;
+		border-radius: 10px;
+    }
+    /*我的发言*/
+    .my-statement{
+    	position: absolute;
+    	top: 220px;
+    	width: 100%;
+		border: 1px solid #CCCCCC;
+		border-radius: 10px;
+    }
+	
+	/*文章标题*/
+	.article-title{
+		width: 95%;
+		margin-top: 40px;
+		margin-left: 2.5%;
+    	text-align: left;
+    	border-bottom: 1px dashed #CCCCCC;
+	}
+			
+	/*文章内容*/
+	.article-content{
+		margin-left: 3%;
+		line-height: 30px;
+		margin-bottom: 15px;
+	}
+
+	.nickname-pwd{
+		margin-bottom: 2%;
+	}
+
+	.my-total {
+	    margin-left: 10%;
+	    text-align: left;
+	}
+
+	/*底部分页*/
+	.footer-page{
+		width: 90%;
+		margin-left: 5%;
+	}

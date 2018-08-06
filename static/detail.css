@@ -1,0 +1,33 @@
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+
+	/*主题内容部分*/
+	.center{
+		border: 1px solid #CCCCCC;
+	    width: 60%;
+	    margin: 0 5%;
+	    border-radius: 10px;
+	}
+
+	/*内容*/
+	.p-content{
+		width: 95%;
+		margin-right: 2.5%;
+		margin-left: 2.5%;
+	}
+	.body-all{
+		position: relative;
+	}
+
+	/*翻页*/
+	.page{
+	    width: 60%;
+	    margin: 0 5%;
+	    border-radius: 10px;
+	}
+
+	.hr-bottom{
+		border: 1px solid #CCCCCC;
+	}
