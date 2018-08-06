@@ -8,46 +8,45 @@
 		width: 85%;
 		margin-left: 90px;
 		margin-top: 10px;
+		/*border: 1px solid red;*/
 	}
 
+	/*头像*/
 	.head{
+		top: -10px;
 		position: absolute;
 	    left: -90px;
-	    height: 25%;
-	    width: 13%;
-	}
-	/*增加评论的背景图片*/
-	.comment_total{
-		background: url(http://img.yoyo666.top/front/images/icon_comment.gif) no-repeat;
-	}
-	/*增加阅读的背景图片*/
-	.acitve_view{
-		background: url(http://img.yoyo666.top/front/images/icon_arrow.gif) no-repeat;
-	}
-	.right{
-		    color: #555;
+	    height: 80px;
+	    width: 80px;
+	    border-radius: 50%;
 	}
 
-	.left{
-	    color: #555;
+	/*发布时间*/
+	.release-time{
+		font-size: 12px;
+		color: #808080;
+
+	}
+	/*用户昵称*/
+	.nickname{
+		line-height: 33px;
+		font-size: 15.33px;
+	    color: #333333;
+	    font-weight: 700;
 	}
 
-	/*底部详细信息增加padding使样式好看*/
-	.tab-info{
-		padding: 5px;
+	/*标题*/
+	.article-title{
+		font-size: 25px;
+		line-height: 45px;
 	}
 
-	.tab-info a{
-		margin-left: 3%;
-		color: #555;
-	}
-
-	.tab-info a:hover{
-		color: blue;
-	}
-	.border p{
-		margin-top: 15px;
-		padding: 10px;
+	.articl-cotent{
+		margin-left: -10px;
+    	padding: 10px;
+	    font-size: 14px;
+	    line-height: 23px;
+	    /*word-wrap: break-word;*/
 	}
 
 	/*最外部div*/
@@ -61,6 +60,44 @@
 	.body-all{
 		position: relative;
 	}
+
+	/*增加评论的背景图片*/
+	.comment_total{
+		background: url(http://img.yoyo666.top/front/images/icon_comment.gif) no-repeat;
+	}
+	/*增加阅读的背景图片*/
+	.acitve_view{
+		background: url(http://img.yoyo666.top/front/images/icon_arrow.gif) no-repeat;
+	}
+
+	/*点赞的背景*/
+	.acitve_like{
+		background: url(http://img.yoyo666.top/front/images/like.png) no-repeat;
+		background-size:17px 17px;
+	}
+
+	/*推荐*/
+	.acitve_recommend{
+		background: url(http://img.yoyo666.top/front/images/recommend.png) no-repeat;
+		background-size:17px 17px;
+	}
+
+
+	/*底部详细信息增加padding使样式好看*/
+	.tab-info{
+		padding: 5px;
+	}
+
+	.tab-info a{
+		margin-left: 3%;
+		color: #555;
+	}
+
+	.tab-info a:hover{
+		color: #307D74;
+		text-decoration: none;
+	}
+
 
 	/*翻页*/
 	.page{

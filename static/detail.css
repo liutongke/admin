@@ -3,6 +3,9 @@
 		padding: 0px;
 	}
 
+	.body-all{
+		position: relative;
+	}
 	/*主题内容部分*/
 	.center{
 		border: 1px solid #CCCCCC;
@@ -11,16 +14,32 @@
 	    border-radius: 10px;
 	}
 
+	/*标题*/
+	.article-title{
+		text-align: center;
+		font-size: 25px;
+	}
+
+	/*说明*/
+	.div-explain{
+		text-align: center;
+	}
+
+	.div-explain div{
+		padding: 4px;
+	}
 	/*内容*/
-	.p-content{
+	.article-content{
 		width: 95%;
 		margin-right: 2.5%;
 		margin-left: 2.5%;
 	}
-	.body-all{
-		position: relative;
-	}
 
+	/*分享*/
+	.share_btns{
+		border: 1px dashed #ccc;
+		line-height: 25px;
+	}
 	/*翻页*/
 	.page{
 	    width: 60%;

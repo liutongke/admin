@@ -1,0 +1,123 @@
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.center-frame{
+		position: relative;
+		border: 1px solid #ccc;
+		border-radius: 10px;
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+		height: 490px;
+	}
+
+	/*左边侧边栏*/
+	.left-sdie-column{
+		position: absolute;
+		width: 30%;
+		/*border: 1px solid red;*/
+		line-height: 50px;
+	}
+
+	.left-sdie-column span {
+	    vertical-align: middle;
+	}
+
+	.left-sdie-column a {
+		color: #333;
+	    padding: 0px 70px;
+	    font-size: 15px;
+	    display: block;
+	    text-decoration: none;
+	}
+
+    .left-sdie-column ul li{
+    	list-style: none;
+    }
+
+	.active{
+		background-color: #f0f0f0;
+    	border-radius: 4px;
+	}
+
+	.left-sdie-column ul li a:hover{
+		background-color: #f0f0f0;
+    	border-radius: 4px;
+	}
+    /*右边侧边栏*/
+    .right-sdie-column{
+    	position: absolute;
+    	right: 0px;
+    	width: 65%;
+    	/*border: 1px solid blue;*/
+    }
+
+    .form-control {
+	    width: 60%;
+	}
+
+	.form-sdie-column{
+		margin-top: 5%;
+	}
+
+	.form-sdie-column div{
+		padding: 15px;
+	}
+
+	.right-sdie-column-font{
+		font-size: 25px;
+	}
+	
+	/*修改第三方绑定样式*/
+	.bind-third ul li {
+	    line-height: 30px;
+	    list-style: none;
+	    font-size: 15px;
+	}
+	
+	/*第三方绑定qq*/
+	.bind-third-qq{
+		display: block;
+		width: 17px;
+		height: 17px;
+		background: url(http://img.yoyo666.top/front/images/QQ.png) no-repeat;
+		background-size: 17px 17px;
+	}
+
+	/*第三方绑定微博*/
+	.bind-third-weibo{
+		display: block;
+		width: 17px;
+		height: 17px;
+		background: url(http://img.yoyo666.top/front/images/weibo.png) no-repeat;
+		background-size: 17px 17px;
+	}
+	
+	.bind-table{
+		width:35%;
+	}
+
+	.bind-third{
+		position: relative;
+	}
+	.bind-third div{
+		position: absolute;
+		/*top: 10px;
+		left: 10px;*/
+	}
+
+	/*修改按钮样式*/
+	.btn-success{
+		margin-top: 10px;
+		width: 100px;
+	    border-radius: 20px;
+	    border: none;
+	}
+
+	.table-master {
+	    width: 100%;
+	    max-width: 100%;
+	    margin-bottom: 0px;
+	}

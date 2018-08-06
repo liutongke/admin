@@ -1,4 +1,4 @@
-公共css属性*/
+/*公共css属性*/
 	/*页脚*/
 	.footer{
 		background: #169FE6;
@@ -85,3 +85,8 @@
 		margin-left: 2.5%;
 	}
 	/*侧边栏结束
+
+	/*hr下划线统一样式*/
+	.hr-style-unify{
+		
+	}

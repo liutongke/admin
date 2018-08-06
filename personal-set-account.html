@@ -10,9 +10,8 @@
         <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
         <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="./static/login-register.css">
-        <!-- 底部栏公共css -->
-    <link rel="stylesheet" type="text/css" href="./static/public.css">
+        <link rel="stylesheet" type="text/css" href="./static/personal-set-account.css">
+        <link rel="stylesheet" type="text/css" href="./static/public.css">
         <link rel="icon" href="./images/60x60 copy.png" type="image/x-icon" />
         <link rel="shortcut icon" href="./images/60x60 copy.png" type="image/x-icon" />
     </head>
@@ -81,38 +80,74 @@
                 <!-- /.container-fluid -->
             </nav>
         </div>
-        <!-- 中部主要内容 -->
-            <div class="center">
-                <div>
-                	<h3>欢迎登录/注册</h3>
-                </div>
-                <div class="share_btns">
-                	<span class="form-title">短信登录</span>
-					<div class="form-package">
-	                    <form method="post" action="#" class="form-style">
-	                        <div>
-	                        	<input name="phone" type="text" class="form-input-control" id="exampleInputPhone" placeholder="手机号">
-	                        <div class="CountButton-3e-kd" onclick="getcode()">获取验证码</div>
-	                        </div>
-	                        <div>
-	                        	<input name="code" type="code" class="form-input-control" id="exampleInputCode" placeholder="验证码">
-	                        </div>
-	                        <div class="login-prompt">温馨提示：登陆后将可以评论和订阅博文</div>
-                            <!-- 错误信息 -->
-                            <div>
-                                <span style="color:red;font-size: 14px;">手机号或验证码错误</span>
-                            </div>
-	                        <div>
-	                        	<button type="submit" class="form-btn-sytle">登录/注册</button>
-	                        </div>
-	                    </form>	
-					</div>
-                    <div class="third">第三方登录:
-                    	<a href="#" class="qq-login"><img src="http://img.yoyo666.top/front/images/QQ.png"> QQ</a>
-                    	<a href="#"  class="weibo-login"><img src="http://img.yoyo666.top/front/images/weibo.png"> 微博</a>
-                    </div>
-                </div>
+        <!-- 中部框架 -->
+        <div class="center-frame">
+            <!-- 左边侧边栏 -->
+            <div class="left-sdie-column">
+                <ul>
+                    <li class="router-link-exact-active">
+                        <a href="/settings/basic">
+                            <div class="setting-icon"><i class="iconfont ic-settings-basic"></i>
+                            </div> <span>基础设置</span> 
+                            <!---->
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="./personal-set-info.html">
+                            <div class="setting-icon"><i class="iconfont ic-settings-profile"></i>
+                            </div> <span>个人资料</span> 
+                            <!---->
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="./personal-set-password.html">
+                            <div class="setting-icon"><i class="iconfont ic-settings-verify"></i>
+                            </div> <span>密码修改</span> 
+                            <!---->
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/settings/blacklist">
+                            <div class="setting-icon"><i class="iconfont ic-settings-block"></i>
+                            </div> <span>黑名单</span> 
+                            <!---->
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/settings/reward-setting">
+                            <div class="setting-icon"><i class="iconfont ic-settings-money"></i>
+                            </div> <span>赞赏设置</span> 
+                            <!---->
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="./personal-set-account.html">
+                            <div class="setting-icon"><i class="iconfont ic-settings-account"></i>
+                            </div> <span>帐号管理</span> 
+                            <!---->
+                        </a>
+                    </li>
+                </ul>
             </div>
+            <!-- 右侧侧边栏 -->
+            <div class="right-sdie-column">
+                <form action="#" method="post" class="form-sdie-column">
+                    <div class="right-sdie-column-font">
+                        永久删除帐号
+                    </div>
+                    <div>
+                        <ul class="explain-del">
+                            <li>如果你对本博客上的某些内容、功能不满意，你可以反馈给我提出。</li>
+                            <li>删除帐号前，请确保已经没有任何公开或私密文章。</li>
+                            <li>删除帐号是不可逆的操作，删除后将无法恢复。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-danger">删除</button>
+                    </div>
+                </form>
+            </div>
+        </div>
             <!-- 侧边栏 -->
         <div class="side">
             <p class="side-span">公</p>
@@ -165,27 +200,9 @@
     </body>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script type="text/javascript" src="./static/public.js"></script>
-    <script type="text/javascript">
-        function getcode()
-        {
-            var phone = document.getElementById("exampleInputPhone").value;
-            // alert(phone);
-            $.ajax({
-                url: "/blog/get/phone/code",
-                type: "post",
-                data: {'phone': phone},
-                dataType: 'json',
-                success: function (data) {
-                    if(data.status){
-                        alert(data.msg)
-                    }else{
-                        alert(data.msg)
-                    }
-                },
-                error: function (date) {
-                    alert(data.msg);
-                }
-            }); 
-        }
-    </script>
+<script type="text/javascript">
+    // 使用定位后脱离文档流需要使用js增加定高
+    var one = document.querySelector(".my-statement").offsetHeight+220;
+    document.querySelector(".center").style.height = one+'px';
+</script>
 </html>
