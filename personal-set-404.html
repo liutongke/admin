@@ -3,14 +3,14 @@
     
     <head>
         <meta charset="UTF-8">
-        <title>刘同科的博客</title>
+        <title>基础修改</title>
         <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
         <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
         <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
         <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="./static/personal-set-password.css">
+        <link rel="stylesheet" type="text/css" href="./static/personal-set-404.css">
         <link rel="stylesheet" type="text/css" href="./static/public.css">
         <link rel="icon" href="./images/60x60 copy.png" type="image/x-icon" />
         <link rel="shortcut icon" href="./images/60x60 copy.png" type="image/x-icon" />
@@ -99,21 +99,21 @@
                             <!---->
                         </a>
                     </li>
-                    <li class="active">
+                    <li class="">
                         <a href="./personal-set-password.html">
                             <div class="setting-icon"><i class="iconfont ic-settings-verify"></i>
                             </div> <span>密码修改</span> 
                             <!---->
                         </a>
                     </li>
-                    <li class="">
+                    <li class="active">
                         <a href="./personal-set-404.html">
                             <div class="setting-icon"><i class="iconfont ic-settings-block"></i>
                             </div> <span>黑名单</span> 
                             <!---->
                         </a>
                     </li>
-                    <li class="">
+                    <li class="active">
                         <a href="./personal-set-404.html">
                             <div class="setting-icon"><i class="iconfont ic-settings-money"></i>
                             </div> <span>赞赏设置</span> 
@@ -131,20 +131,8 @@
             </div>
             <!-- 右侧侧边栏 -->
             <div class="right-sdie-column">
-                <form action="#" method="post" class="form-sdie-column">
-                    <div class="right-sdie-column-font">
-                        修改密码
-                    </div>
-                    <div>
-                        <input class="form-control input-lg" type="text" placeholder="原密码">
-                    </div>
-                    <div>
-                        <input class="form-control input-lg" type="text" placeholder="新密码">
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-success">保存</button>
-                    </div>
-                </form>
+                <h1>功能正在紧张开发中...</h1>
+                <div><h4>请耐心关注</h4></div>
             </div>
         </div>
             <!-- 侧边栏 -->
@@ -198,10 +186,30 @@
         </div>
     </body>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script type="text/javascript" src="./static/public.js"></script>
+    <script src="./static/public.js"></script>
 <script type="text/javascript">
     // 使用定位后脱离文档流需要使用js增加定高
-    var one = document.querySelector(".my-statement").offsetHeight+220;
-    document.querySelector(".center").style.height = one+'px';
+    // var one = document.querySelector(".my-statement").offsetHeight+220;
+    // document.querySelector(".center").style.height = one+'px';
+// 苹果浏览器不支持hover使用js完成,解除绑定手机
+// $(function(){
+//     $('.bind-third-phone').mouseover(function(){
+//         $(".cancel-bind-phone").css("display","block");
+//     })
+
+//     $('.bind-third-phone').mouseout(function(){
+//         $(".cancel-bind-phone").css("display","none");
+//     })
+// })
+// 苹果浏览器不支持hover使用js完成,解除绑定邮箱
+// $(function(){
+//     $('.bind-third-email').mouseover(function(){
+//         $(".cancel-bind-email").css("display","block");
+//     })
+
+//     $('.bind-third-email').mouseout(function(){
+//         $(".cancel-bind-email").css("display","none");
+//     })
+// })
 </script>
 </html>

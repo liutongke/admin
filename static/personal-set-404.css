@@ -47,32 +47,11 @@
     	border-radius: 4px;
 	}
     /*右边侧边栏*/
-    .right-sdie-column{
-    	position: absolute;
-    	right: 0px;
-    	width: 65%;
-    	/*border: 1px solid blue;*/
-    }
-
-    .form-control {
-	    width: 60%;
-	}
-
-	.form-sdie-column{
-		margin-top: 5%;
-	}
-
-	.form-sdie-column div{
-		padding: 15px;
-	}
-
-	.right-sdie-column-font{
-		font-size: 25px;
-	}
-
-	/*修改按钮样式*/
-	.btn-success{
-		width: 100px;
-	    border-radius: 20px;
-	    border: none;
+	.right-sdie-column {
+	    position: absolute;
+	    right: 0px;
+	    width: 65%;
+	    /*border: 1px solid blue;*/
+	    text-align: center;
+	    height: 310px;
 	}
