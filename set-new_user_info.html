@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>设置密码</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./static/set-new_user_info.css">
+    <link rel="stylesheet" type="text/css" href="./static/public.css">
+    <link rel="icon" href="./images/60x60 copy.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="./images/60x60 copy.png" type="image/x-icon"/>
+    <style>
+        .error {
+            color: #DE533A;
+        }
+    </style>
+</head>
+<body>
+<!-- 头部导航栏 -->
+<div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <a class="navbar-brand" href="#">刘同科的博客</a>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="./index.html">首页<span class="sr-only">(current)</span></a>
+
+                    </li>
+                    <li><a href="./index.html">博客</a>
+
+                    </li>
+                    <li class="dropdown"><a href="./index.html" class="dropdown-toggle" data-toggle="dropdown"
+                                            role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span
+                            class="caret"></span></a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a>
+
+                            </li>
+                            <li><a href="#">Another action</a>
+
+                            </li>
+                            <li><a href="#">Something else here</a>
+
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a>
+
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a>
+
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="搜索博客">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./login-register.html">登录/注册</a>
+
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+<!-- 中部框架 -->
+<div class="center-frame">
+    <div class="center-frame-body">
+        <form class="form-horizontal" action="" method="get" id="signupForm" enctype="multipart/form-data">
+            <table class="table">
+                <caption>注册帐号</caption>
+                <tbody>
+                <tr>
+                    <th scope="row">头像</th>
+                    <td>
+                        <a href="javascript:;" class="file">选择文件
+                            <input type="file" name="file" id = "input_file"  onchange="imgPreview(this)"> 
+                        </a> 
+                        <img src="http://img.yoyo666.top/blog/user/images/1608185570311.jpg" class="head" id="preview">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">昵称</th>
+                    <td>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="请输入昵称">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">新密码</th>
+                    <td>
+                        <input type="password" class="form-control" id="password" placeholder="新密码" name="password">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">确认密码</th>
+                    <td>
+                        <input type="password" class="form-control" id="confirm_password" placeholder="确认密码"
+                               name="confirm_password">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="col-sm-offset-2 col-sm-10">
+                <!-- <input class="submit" type="submit" value="提交"> -->
+                <button class="btn btn-success sub-btn">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- 侧边栏 -->
+<div class="side">
+    <p class="side-span">公</p>
+    <p class="side-span">告</p>
+    <div class="side-hide">
+        <div class="side-notice">
+            最新公告
+        </div>
+        <hr>
+        <div class="side-notice-content">
+            我的小鱼你醒了，还认识早晨吗？昨夜你曾经说，愿夜幕永不开启。你的香腮边轻轻滑落的，是你的泪，还是我的泪？初吻吻
+        </div>
+    </div>
+</div>
+<!-- 底部页脚 -->
+<div class="container">
+    <div class="container-center">
+        <div class="col-sm-4 hidden-xs">
+            <div class="content">
+                <h4 class="title">关于本站</h4>
+
+                <p>1、基于Django+Bootstrap开发</p>
+                <p>2、主要发表本人的技术原创博客</p>
+                <p>3、本站于 2018-8-04 开始建站</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="content">
+                <h4 class="title">建议反馈</h4>
+
+                <p>1、可在相应的博文底下评论</p>
+                <p>2、发邮件到1747371936@qq.com</p>
+            </div>
+        </div>
+        <div class="col-sm-4 hidden-xs">
+            <div class="content">
+                <h4 class="title">友情链接</h4>
+
+                <p><a href="#" title="QQ群：701914136（点击加群）" target="_blank">友情链接</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 最底部备案说明 -->
+<div class="footer">
+    <span>Welcome to visit my website © </span>
+</div>
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="./static/public.js"></script>
+<!-- 导入jquery-validation -->
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+<script>
+    $().ready(function () {
+// 在键盘按下并释放及提交后验证提交表单
+        $("#signupForm").validate({
+            rules: {
+                username: {
+                    required: true,
+                    minlength: 2
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+                confirm_password: {
+                    required: true,
+                    minlength: 5,
+                    equalTo: "#password"
+                },
+            },
+            messages: {
+                username: {
+                    required: "请输入用户名",
+                    minlength: "用户名必需由两个字母组成"
+                },
+                password: {
+                    required: "请输入密码",
+                    minlength: "密码长度不能小于6个字符"
+                },
+                confirm_password: {
+                    required: "请输入密码",
+                    minlength: "密码长度不能小于6个字符",
+                    equalTo: "两次密码输入不一致"
+                },
+            }
+        });
+    });
+
+function imgPreview(fileDom) {
+    //判断是否支持FileReader
+    if(window.FileReader) {
+        var reader = new FileReader();
+    } else {
+        alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+    }
+    //获取文件
+    var file = fileDom.files[0];
+    var imageType = /^image\//;
+    //是否是图片
+    if(!imageType.test(file.type)) {
+        alert("请选择图片！");
+        return;
+    }
+    //读取完成
+    reader.onload = function(e) {
+        //获取图片dom
+        var img = document.getElementById("preview");
+        //图片路径设置为读取的图片
+        img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+}
+</script>
+</html>

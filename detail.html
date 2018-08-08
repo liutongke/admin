@@ -94,10 +94,52 @@
                 </div>
                 <hr class="hr-bottom">
                 <div class="article-content">
-                    之前写过Django富文本编辑器的文章，使用UEditor改造前端页面的富文本编辑器。用起来感觉一般，而且好像百度已经很久没有维护了。近期在录制Django2.0视频教程，需要一款更好的富文本编辑器作为教程内容讲解。需要使用方便、配置简单、可上传图片、可查看和编辑html源码的富文本编辑器。最后找到django-ckeditor。 django-ckeditor是集成ckeditor富文本编辑器的django第三方库。可在admin后台使用ckeditor富文本编辑器编辑内容，另页面更加丰富。同时该富文本编辑器也可用于form类。具体说明可见pypi。接下来具体讲解如何使用。
-                    本文使用到的相关版本： Python 3.6 Django 2.0 django-ckeditor 5.4.0 Pillow 5.0.0 1、初步使用django-ckeditor 1）安装django-ckeditor 使用pip安装，目前我安装的版本是5.4.0： pip install django-ckeditor 2）注册ckeditor应用 打开django项目的settings.py文件，在INSTALLED_APPS中加入'ckeditor'，如： INSTALLED_APPS =
-                    [ # ... 'ckeditor', ] 3）修改模型 打开对应需要修改为富文本编辑的模型文件models.py。例如我有个Blog模型： from django.db import models class Blog(models.Model): title = models.CharField(max_length=50) content = models.TextField() 其中，title是博客标题，content是博客内容。博客内容需要富文本编辑，则改成如下： from django.db
-                    import models from ckeditor.fields import RichTextField class Blog(models.Model): title = models.CharField(max_length=50) content = RichTextField() 修改完成之后，同步数据库，再打开admin后台管理界面即可看到效果：
+                
+                <p>1.1查看新磁盘,可以看到/dev/sdb是新的未挂载的磁盘；<br />
+<code>shell
+[root@localhost ~]# fdisk -l</code><br />
+<img src="https://upload-images.jianshu.io/upload_images/7783090-453fbcfca8542868.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="200" height="200">
+1.2硬盘分区 ，进入fdisk模式<br />
+进入fdisk模式
+<code>shell
+[root@localhost ~]# /sbin/fdisk /dev/sdb</code><br />
+输入n进行分区
+<code>shell
+[root@localhost ~]# /sbin/fdisk /dev/sdb</code><br />
+选择分区类型（p主分区）
+<code>shell
+Command (m for help): n</code>
+选择分区个数（也是分区id）
+<code>shell
+Partition number (1-4, default 1): 1</code>
+选择分区空间大小，我直接回车使用默认值
+<code>shell
+Last sector, +sectors or +size{K,M,G} (2048-209715199, default 209715199):</code>
+一直回车，最后输入q退出。<br />
+<img alt="image.png" src="https://upload-images.jianshu.io/upload_images/7783090-79957838cf68bb40.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /><br />
+三、格式化分区 
+将新分区格式化为ext3文件系统
+<code>shell
+[root@localhost ~]# mkfs -t ext3 /dev/sdb</code><br />
+格式化成功
+<img alt="image.png" src="https://upload-images.jianshu.io/upload_images/7783090-031cffe3ca88a890.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>四、挂载硬盘 
+1.创建挂载点，在根目录下创建storage目录
+<code>shell
+[root@localhost ~]# mkdir /web</code>
+2.将/dev/sdb挂载到/web下
+<code>shell
+[root@cgsl ]# mount /dev/sdb /web</code><br />
+2.使用df -h查看是否挂载成功<br />
+<img alt="image.png" src="https://upload-images.jianshu.io/upload_images/7783090-97c5ba39630ae061.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>硬盘格式化 
+1)取消挂载
+```shell</p>
+<h1>unmount /dev/sdb</h1>
+<h1>vi /etc/fstab</h1>
+<p><code>2)进行格式化</code>shell</p>
+<h1>mkfs.xfs /dev/sdb</h1>
+<p>```</p>
                 </div>
                 <div class="share_btns">
                     <p>(原创博文，转载请注明来自 <a href="http://121.196.192.76/my-blog/personal-center.html">刘同科的博客</a>！本文链接：<a href="#">http://121.196.192.76/my-blog/detail.html</a>)</p>
