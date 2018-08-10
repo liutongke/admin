@@ -63,22 +63,22 @@
 
 	/*增加评论的背景图片*/
 	.comment_total{
-		background: url(http://img.yoyo666.top/front/images/icon_comment.gif) no-repeat;
+		background: url(http://img.yoyo666.top/blog/user/images/icon_comment.gif) no-repeat;
 	}
 	/*增加阅读的背景图片*/
 	.acitve_view{
-		background: url(http://img.yoyo666.top/front/images/icon_arrow.gif) no-repeat;
+		background: url(http://img.yoyo666.top/blog/user/images/icon_arrow.gif) no-repeat;
 	}
 
 	/*点赞的背景*/
 	.acitve_like{
-		background: url(http://img.yoyo666.top/front/images/like.png) no-repeat;
+		background: url(http://img.yoyo666.top/blog/user/images/like.png) no-repeat;
 		background-size:17px 17px;
 	}
 
 	/*推荐*/
 	.acitve_recommend{
-		background: url(http://img.yoyo666.top/front/images/recommend.png) no-repeat;
+		background: url(http://img.yoyo666.top/blog/user/images/recommend.png) no-repeat;
 		background-size:17px 17px;
 	}
 
