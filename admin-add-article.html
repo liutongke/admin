@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>刘同科的博客-后台添加博客</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./static/admin-add-article.css">
+    <link rel="icon" href="http://img.yoyo666.top/blog/user/images/60x60 copy.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="http://img.yoyo666.top/blog/user/images/60x60 copy.png" type="image/x-icon"/>
+</head>
+<style type="text/css">
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.body{
+    padding: 15px;
+    border: 0.5px dashed #ccc;
+    border-radius: 10px;
+    width: 75%;
+    margin-left: 12.5%;
+}    
+</style>
+<body>
+<div class="body">
+    <form method="post" action="{% url 'cnblogs/article/add' %}">
+      <div class="form-group">
+        <label for="exampleInputEmail1">博客标题</label>
+        <input type="title" class="form-control" id="exampleInputEmail1" placeholder="博客标题" name="title">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">博客摘要</label>
+        <textarea placeholder="博客摘要"  class="form-control" rows="3" name="preview"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputFile">博客内容</label>
+        <textarea placeholder="博客内容"  class="form-control" rows="14" name="content"></textarea>
+      </div>
+      <button type="button" class="btn btn-success">发布</button>
+    </form>    
+</div>
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+</html>
