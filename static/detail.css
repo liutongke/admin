@@ -35,6 +35,11 @@
 		margin-left: 2.5%;
 	}
 
+	/*设置文章内容中的图片最大宽度*/
+	.article-content img{
+		max-width: 725px;
+	}
+	
 	/*分享*/
 	.share_btns{
 		border: 1px dashed #ccc;

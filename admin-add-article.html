@@ -36,7 +36,7 @@
 </style>
 <body>
 <div class="body">
-    <form method="post" action="{% url 'cnblogs/article/add' %}">
+    <form method="" action="" onsubmit="return check()" name="form_val">
       <div class="form-group">
         <label for="exampleInputEmail1">博客标题</label>
         <input type="title" class="form-control" id="exampleInputTitle" placeholder="博客标题" name="title">
@@ -44,19 +44,101 @@
       <div class="form-group">
         <label for="exampleInputEmail1">SEO关键字</label>
         <input type="title" class="form-control" id="exampleInputKeywords" placeholder="SEO关键字" name="keywords">
-      </div>            
+      </div>     
+      <div class="form-group">
+        <label for="exampleInputEmail1">标签</label>
+          <span style="border:1px solid #ccc;padding:5px;margin-left:10px;border-radius:5px;"><input type="checkbox" aria-label="..." name="tag_id" value="1" />PHP</span>
+          <span style="border:1px solid #ccc;padding:5px;margin-left:10px;border-radius:5px;"><input type="checkbox" aria-label="..." name="tag_id" value="2" />Python</span>
+          <span style="border:1px solid #ccc;padding:5px;margin-left:10px;border-radius:5px;"><input type="checkbox" aria-label="..." name="tag_id" value="3" />Java</span>
+      </div>        
       <div class="form-group">
         <label for="exampleInputPassword1">博客摘要</label>
-        <textarea placeholder="博客摘要"  class="form-control" rows="3" name="preview"></textarea>
+        <textarea placeholder="博客摘要"  class="form-control" rows="3" name="preview" id="preview"></textarea>
       </div>
       <div class="form-group">
         <label for="exampleInputFile">博客内容</label>
-        <textarea placeholder="博客内容"  class="form-control" rows="14" name="content"></textarea>
+        <!-- 富文本编辑器内容 -->
+        <div id="content">
+
+        </div>
       </div>
-      <button type="button" class="btn btn-success">发布</button>
+      <button class="button bg-main icon-check-square-o" type="submit">提交</button>
     </form>    
 </div>
 </body>
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+<script type="text/javascript" src="https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js"></script>
+<script type="text/javascript" src="https://img.yoyo666.top/layer/layer.js"></script>
+<script type="text/javascript">
+    // 编辑器
+    var E = window.wangEditor
+    var editor = new E('#content');
+    // 配置服务器端地址
+    editor.customConfig.uploadImgServer = 'https://mp.yoyo666.cn/wangeditor/upload/img';
+    // 将图片大小限制为 5M
+    editor.customConfig.uploadImgMaxSize = 5 * 1024 * 1024;
+    // 自定义filename
+    editor.customConfig.uploadFileName = 'img';
+    // 隐藏“网络图片”tab
+    editor.customConfig.showLinkImg = false
 
+    editor.create();
+    //获取编辑器文本内容
+    // document.getElementById('btn1').addEventListener('click', function () {
+    //     // 读取 html
+    //     alert(editor.txt.html());
+    // }, false);
+
+    // 验证
+    function check() {
+        var title = document.form_val.title.value;
+        if ((document.form_val.title.value) == '') {
+            layer.msg('标题不可为空');
+            return false;
+        }
+        if ((document.form_val.keywords.value) == '') {
+            layer.msg('关键词不可为空');
+            return false;
+        }
+        // 文章内容
+        var content = editor.txt.html();
+        // tag_id
+        var tag_id = new Array();
+        $('input[name="tag_id"]:checked').each(function () {
+            tag_id.push($(this).val()); //向数组中添加元素
+        });
+        var idstr = tag_id.join(','); //将数组元素连接起来以构建一个字符串
+        // console.log(id_array);
+        // alert(id_array);
+        // 文章标题
+        var title = $("#exampleInputTitle").val();
+        // 预览
+        var preview = $("#preview").val();
+        // 关键词
+        var keywords = $("#exampleInputKeywords").val();
+        $.ajax({
+            url: "",
+            type: "post",
+            data: {
+                'tag_id': idstr,
+                'content': content,
+                'title': title,
+                'preview': preview,
+                'keywords': keywords,
+            },
+            dataType: 'json',
+            success: function (data) {
+                if (data.status) {
+                    //提示层
+                    layer.msg(data.msg);
+                } else {
+                    layer.msg(data.msg);
+                }
+            },
+            error: function (date) {
+                layer.msg(data.msg);
+            }
+        });
+    }
+</script>
 </html>
