@@ -1,3 +1,11 @@
+// 百度站长统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?545c89b85e817e6eea84ff0a8a98503e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
 //百度SEO主动推送连接
 (function(){
     var bp = document.createElement('script');

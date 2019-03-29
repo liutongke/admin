@@ -1,10 +1,16 @@
-/*公共css属性*/
+	/*公共css属性*/
 	/*页脚*/
 	.footer{
 		background: #169FE6;
 		text-align: center;
 	}
 
+	/*页脚字体颜色*/
+	.footer-content{
+		font-size: 17px;
+		color:white;
+	}
+	
 	.container {
 	    width: 100%;
 	    background: #e7e7e7;
@@ -86,7 +92,19 @@
 	}
 	/*侧边栏结束
 
-	/*hr下划线统一样式*/
-	.hr-style-unify{
-		
-	}
+	/*快速返回顶部*/
+	.back-top {
+        width: 50px;
+        height: 37px;
+        line-height: 37px;
+        background: #169FE6;
+        cursor: pointer;
+        color: white;
+        text-align: center;
+        position: fixed;
+        right: 100px;
+        bottom: 50px;
+        display: none;
+        border-radius: 5px;
+    }
+    /*快速返回顶部按钮结束*/

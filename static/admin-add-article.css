@@ -1,0 +1,12 @@
+.main-tag{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.main-tag span{
+	border: 1px solid #ccc;
+	padding: 2px;
+	margin-left: 10px;
+	border-radius: 4px;
+	margin-top: 4px;
+}

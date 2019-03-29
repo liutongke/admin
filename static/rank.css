@@ -1,12 +1,16 @@
-/*右侧排行榜*/
-	/*右侧排名*/
-	.rank{
+	.main-right{
 		position: absolute;
-		left: 70%;
 		top: 0%;
+		left: 72%;
+		/*border: 1px solid red;*/
+		width: 25%;
+		height: 50px;
+		width: 25%;
+	}
+	/*右侧排行榜*/
+	.rank{
 		border: 1px solid #CCCCCC;
 		border-radius: 5px;
-		width: 25%;
 	}
 
 	.rank_content{
@@ -14,6 +18,67 @@
 		width: 85%;
 	}
 	.hot-ul{
-		line-height: 25px;
 		list-style: none;
+	}
+
+	.hot-ul li{
+		border-bottom: 0.5px solid #ccc;
+		padding: 4px;
+	}
+
+	/*标签*/
+	.tag{
+		margin-top: 5%;
+		border: 1px solid #CCCCCC;
+		border-radius: 5px;
+	}
+
+	.tag_content{
+		margin: 0 auto;
+		width: 85%;
+	}
+
+	.tag_content div{
+		/*border: 1px solid red;*/
+		display: flex;
+		/*无法容纳时自动换行*/
+		flex-wrap:wrap;
+		padding-bottom: 15px;
+	}
+
+	.tag_content a{
+		/*border: 1px solid red;*/
+		padding: 2px 15px 2px 15px;
+		margin-top: 15px;
+		margin-left: 5px;
+		border-radius: 15px;
+		background: #169FE6;
+		color: #fff;
+	}
+	/*友情链接*/
+	.links{
+		margin-top: 5%;
+		border: 1px solid #CCCCCC;
+		border-radius: 5px;
+	}
+
+	.links-img{
+		background: url(https://ltkblog.oss-cn-hangzhou.aliyuncs.com/images/links.png) no-repeat;
+		background-size:17px 17px;
+	}
+
+	.links_content{
+		margin: 0 auto;
+		width: 85%;
+	}
+
+	.links_content div{
+		padding-bottom: 10px;
+	}
+
+	.links_content a{
+		font-size: 14px;
+		padding: 2px 15px 2px 15px;
+		margin-top: 15px;
+		margin-left: 2%;
 	}

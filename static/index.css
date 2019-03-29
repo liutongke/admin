@@ -2,13 +2,28 @@
 		margin: 0px;
 		padding: 0px;
 	}
+	
+	body {
+	    background: #f8f8f8;
+	}
 
-	.border{
+	/*最外部div*/
+	.wrap{
+		position: relative;
+	}
+
+	.article-content{
+		border: 1px solid #CCCCCC;
+	    width: 65%;
+	    margin: 0 5%;
+	    border-radius: 10px;
+	}
+
+	.article-border{
 		position: relative;
 		width: 85%;
 		margin-left: 90px;
 		margin-top: 10px;
-		/*border: 1px solid red;*/
 	}
 
 	/*头像*/
@@ -49,36 +64,24 @@
 	    /*word-wrap: break-word;*/
 	}
 
-	/*最外部div*/
-	.center{
-		border: 1px solid #CCCCCC;
-	    width: 60%;
-	    margin: 0 5%;
-	    border-radius: 10px;
-	}
-
-	.body-all{
-		position: relative;
-	}
-
 	/*增加评论的背景图片*/
 	.comment_total{
-		background: url(http://img.yoyo666.top/blog/user/images/icon_comment.gif) no-repeat;
+		background: url(https://ltkblog.oss-cn-hangzhou.aliyuncs.com/images/icon_comment.gif) no-repeat;
 	}
 	/*增加阅读的背景图片*/
 	.acitve_view{
-		background: url(http://img.yoyo666.top/blog/user/images/icon_arrow.gif) no-repeat;
+		background: url(https://ltkblog.oss-cn-hangzhou.aliyuncs.com/images/icon_arrow.gif) no-repeat;
 	}
 
 	/*点赞的背景*/
 	.acitve_like{
-		background: url(http://img.yoyo666.top/blog/user/images/like.png) no-repeat;
+		background: url(https://ltkblog.oss-cn-hangzhou.aliyuncs.com/images/like.png) no-repeat;
 		background-size:17px 17px;
 	}
 
 	/*推荐*/
 	.acitve_recommend{
-		background: url(http://img.yoyo666.top/blog/user/images/recommend.png) no-repeat;
+		background: url(https://ltkblog.oss-cn-hangzhou.aliyuncs.com/images/recommend.png) no-repeat;
 		background-size:17px 17px;
 	}
 
@@ -101,13 +104,13 @@
 
 	/*翻页*/
 	.page{
-	    width: 60%;
+	    width: 65%;
 	    margin: 0 5%;
 	    border-radius: 10px;
 	}
 
 	.hr-bottom{
-		border: 1px solid #CCCCCC;
+		border: 0.5px solid #CCCCCC;
 	}
 
 	/*页头居中*/
@@ -118,5 +121,3 @@
 		padding-top: 10px;
 		text-align: center;
 	}
-
-	
